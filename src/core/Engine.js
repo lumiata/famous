@@ -108,7 +108,11 @@ define(function(require, exports, module) {
         }
         else loopEnabled = false;
     }
-    window.requestAnimationFrame(loop);
+
+    //TODO: Dont do this, this just makes it way faster and less responsive, visual
+  //performance sucks doing this
+  setInterval(Engine.step, 20);
+  //  window.requestAnimationFrame(loop);
 
     //
     // Upon main document window resize (unless on an "input" HTML element):
